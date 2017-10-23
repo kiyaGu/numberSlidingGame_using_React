@@ -8,7 +8,14 @@ describe("<TilesContainer /> ", () => {
     const wrapper = shallow(<TilesContainer />);
     expect(wrapper.find("ul").exists()).toBe(true);
   });
-
+  it("should have a width state", () => {
+    const wrapper = shallow(<TilesContainer />);
+    expect(wrapper.state("width")).toBe(0);
+  });
+  it("should have a height state", () => {
+    const wrapper = shallow(<TilesContainer />);
+    expect(wrapper.state("height")).toBe(0);
+  });
   it("should have a tiles state", () => {
     const wrapper = shallow(<TilesContainer />);
     expect(wrapper.state("tiles")).toEqual([]);
