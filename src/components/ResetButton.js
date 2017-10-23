@@ -1,5 +1,5 @@
 import React, { Component } from "react";
 
 export const ResetButton = () => {
-  return <button />;
+  return <button className="btn" />;
 };
