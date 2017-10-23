@@ -5,7 +5,7 @@ import { Card, CardBody, Row, Col } from "reactstrap";
 class PuzzleContainer extends Component {
   render() {
     return (
-      <Card>
+      <Card id="puzzleContainer">
         <CardBody>
           <Row>
             <Col sm="9">
@@ -18,8 +18,8 @@ class PuzzleContainer extends Component {
         </CardBody>
         <CardBody>
           <Row>
-            <Col sm="4" />
-            <Col sm="3">
+            <Col sm="2" />
+            <Col sm="4">
               <ResetGameButton />
             </Col>
           </Row>

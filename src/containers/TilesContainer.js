@@ -6,8 +6,8 @@ export class TilesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: 0,
-      height: 0,
+      width: 3,
+      height: 3,
       tiles: []
     };
     this.populateTileEntries = this.populateTileEntries.bind(this);
@@ -32,7 +32,10 @@ export class TilesContainer extends Component {
   }
   render() {
     return this.state.tiles ? (
-      <ListGroup>
+      <ListGroup
+        id="lists"
+        className="d-flex flex-row flex-wrap align-content-center"
+      >
         {this.state.tiles.map((tile, index) => (
           <Tile id={index} key={index} value={tile} />
         ))}

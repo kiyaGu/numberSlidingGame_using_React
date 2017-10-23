@@ -10,7 +10,7 @@ export class Tile extends Component {
   }
   render() {
     return (
-      <ListGroupItem id={this.id} value={this.state.value}>
+      <ListGroupItem id={this.id} value={this.state.value} className="w-25">
         {this.state.value}
       </ListGroupItem>
     );
