@@ -11,6 +11,9 @@ class TilesContainer extends Component {
     };
     this.populateTileEntries = this.populateTileEntries.bind(this);
   }
+  componentWillMount() {
+    this.populateTileEntries();
+  }
   populateTileEntries() {
     let tiles = [],
       puzzleSize = this.state.width * this.state.height;

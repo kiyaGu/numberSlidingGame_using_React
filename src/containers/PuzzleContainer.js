@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-
+import TilesContainer from "./TilesContainer";
 class PuzzleContainer extends Component {
   render() {
-    return null;
+    return (
+      <div>
+        <TilesContainer />
+        <GameTimer />
+        <ResetGameButton />
+        <ResultMessageBox />
+      </div>
+    );
   }
 }
 

@@ -33,4 +33,13 @@ describe("<TilesContainer /> ", () => {
     wrapper.instance().populateTileEntries();
     expect(wrapper.update().find(Tile)).toHaveLength(9);
   });
+  it("passes id props to <Tiles />", () => {
+    const wrapper = shallow(<TilesContainer />);
+    wrapper.setState({ width: 3, height: 3 });
+    wrapper.instance().populateTileEntries();
+    const tiles = wrapper.update().find(Tile);
+    tiles.forEach((node, i) => {
+      expect(node.props().id).toBe(i);
+    });
+  });
 });
