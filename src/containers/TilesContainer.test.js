@@ -13,12 +13,16 @@ describe("<TilesContainer /> ", () => {
   });
   it("should have a size state", () => {
     const wrapper = shallow(<TilesContainer />);
-    expect(wrapper.state("size")).toEqual(0);
+    expect(wrapper.state("size")).toBe(0);
   });
   it("for a puzzle of 3 x 3 the size state should equal to 9", () => {
     const wrapper = shallow(<TilesContainer />);
     wrapper.setState({ size: 9 });
-    expect(wrapper.state("size")).toEqual(9);
+    expect(wrapper.state("size")).toBe(9);
+  });
+  it("should have a tiles state", () => {
+    const wrapper = shallow(<TilesContainer />);
+    expect(wrapper.state("tiles")).toEqual([]);
   });
   it(" for a puzzle of 3 x 3 it should have 9 tiles", () => {
     const wrapper = shallow(<TilesContainer />);
