@@ -38,8 +38,19 @@ describe("<TilesContainer /> ", () => {
     wrapper.setState({ width: 3, height: 3 });
     wrapper.instance().populateTileEntries();
     const tiles = wrapper.update().find(Tile);
-    tiles.forEach((node, i) => {
-      expect(node.props().id).toBe(i);
+    tiles.forEach((tile, i) => {
+      expect(tile.props().id).toBe(i);
     });
+  });
+  it("passes value props to <Tiles />", () => {
+    const wrapper = shallow(<TilesContainer />);
+    wrapper.setState({ width: 3, height: 3 });
+    wrapper.instance().populateTileEntries();
+    const tiles = wrapper.update().find(Tile);
+    tiles.slice(0, tiles.length - 1).forEach((tile, i) => {
+      expect(tile.props().value).toBe(i + 1);
+    });
+    //to testing the blank tile
+    expect(tiles.slice(8).props().value).toBe("");
   });
 });
