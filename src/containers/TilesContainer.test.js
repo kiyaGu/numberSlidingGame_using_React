@@ -1,28 +1,22 @@
 import React from "react";
-import { shallow, configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import "../setupTests";
 import TilesContainer from "./TilesContainer";
 import { Tile } from "../components/Tile";
-
-configure({ adapter: new Adapter() });
 
 describe("<TilesContainer /> ", () => {
   it("renders an <ul> list", () => {
     const wrapper = shallow(<TilesContainer />);
     expect(wrapper.find("ul").exists()).toBe(true);
   });
-  it("should have a size state", () => {
-    const wrapper = shallow(<TilesContainer />);
-    expect(wrapper.state("size")).toBe(0);
-  });
-  it("for a puzzle of 3 x 3 the size state should equal to 9", () => {
-    const wrapper = shallow(<TilesContainer />);
-    wrapper.setState({ size: 9 });
-    expect(wrapper.state("size")).toBe(9);
-  });
+
   it("should have a tiles state", () => {
     const wrapper = shallow(<TilesContainer />);
     expect(wrapper.state("tiles")).toEqual([]);
+  });
+  it("should update the size state based on the tiles array length", () => {
+    const wrapper = shallow(<TilesContainer />);
+    wrapper.setState({ tiles: [1, 2, 3, 4, 5, 6, 7, 8, ""] });
+    expect(wrapper.state("tiles").length).toBe(9);
   });
   it(" for a puzzle of 3 x 3 it should have 9 tiles", () => {
     const wrapper = shallow(<TilesContainer />);

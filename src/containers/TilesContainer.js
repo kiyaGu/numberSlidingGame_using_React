@@ -5,8 +5,7 @@ class TilesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tiles: [],
-      size: 0
+      tiles: []
     };
   }
   render() {

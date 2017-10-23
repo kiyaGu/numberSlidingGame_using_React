@@ -5,9 +5,6 @@ class PuzzleContainer extends Component {
     return null;
   }
 }
-const Tiles = () => {
-  return null;
-};
 
 const GameTimer = () => {
   return null;
@@ -20,4 +17,4 @@ const ResetGameButton = () => {
 const ResultMessageBox = () => {
   return null;
 };
-export { PuzzleContainer, Tiles, GameTimer, ResetGameButton, ResultMessageBox };
+export { PuzzleContainer, GameTimer, ResetGameButton, ResultMessageBox };
