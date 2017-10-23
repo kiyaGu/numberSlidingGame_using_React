@@ -14,4 +14,8 @@ describe("<ResetButton />", () => {
     const wrapper = shallow(<ResetButton />);
     expect(wrapper.find("button#reset")).toHaveLength(1);
   });
+  it("renders a button with a text value Reset", () => {
+    const wrapper = shallow(<ResetButton />);
+    expect(wrapper.text()).toBe("Reset");
+  });
 });
