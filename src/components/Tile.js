@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Tile = () => {
-  return null;
+  return <li />;
 };
