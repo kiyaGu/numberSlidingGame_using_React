@@ -1,14 +1,38 @@
 import React, { Component } from "react";
-import TilesContainer from "./TilesContainer";
+import { TilesContainer } from "./TilesContainer";
+import { ResetGameButton } from "../components/ResetGameButton";
+import { Card, CardBody, Row, Col } from "reactstrap";
 class PuzzleContainer extends Component {
   render() {
     return (
-      <div>
-        <TilesContainer />
-        <GameTimer />
-        <ResetGameButton />
-        <ResultMessageBox />
-      </div>
+      <Card>
+        <CardBody>
+          <Row>
+            <Col sm="9">
+              <TilesContainer />
+            </Col>
+            <Col sm="3">
+              <GameTimer />
+            </Col>
+          </Row>
+        </CardBody>
+        <CardBody>
+          <Row>
+            <Col sm="4" />
+            <Col sm="3">
+              <ResetGameButton />
+            </Col>
+          </Row>
+        </CardBody>
+        <CardBody>
+          <Row>
+            <Col sm="2" />
+            <Col sm="8">
+              <ResultMessageBox />
+            </Col>
+          </Row>
+        </CardBody>
+      </Card>
     );
   }
 }
@@ -17,11 +41,7 @@ const GameTimer = () => {
   return null;
 };
 
-const ResetGameButton = () => {
-  return null;
-};
-
 const ResultMessageBox = () => {
   return null;
 };
-export { PuzzleContainer, GameTimer, ResetGameButton, ResultMessageBox };
+export { PuzzleContainer, GameTimer, ResultMessageBox };

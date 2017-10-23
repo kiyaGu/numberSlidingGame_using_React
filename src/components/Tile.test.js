@@ -5,7 +5,7 @@ import { Tile } from "./Tile";
 describe("<Tile />", () => {
   it("renders an <li>", () => {
     const wrapper = shallow(<Tile />);
-    expect(wrapper.find("li")).toHaveLength(1);
+    expect(wrapper.find("ListGroupItem")).toHaveLength(1);
   });
   it("should have an id prop", () => {
     const wrapper = shallow(<Tile id={2} />);

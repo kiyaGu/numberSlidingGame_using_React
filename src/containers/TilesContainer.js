@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Tile } from "../components/Tile";
+import { ListGroup } from "reactstrap";
 
-class TilesContainer extends Component {
+export class TilesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,12 +32,11 @@ class TilesContainer extends Component {
   }
   render() {
     return this.state.tiles ? (
-      <ul>
+      <ListGroup>
         {this.state.tiles.map((tile, index) => (
           <Tile id={index} key={index} value={tile} />
         ))}
-      </ul>
+      </ListGroup>
     ) : null;
   }
 }
-export default TilesContainer;

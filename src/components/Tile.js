@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { ListGroupItem } from "reactstrap";
 export class Tile extends Component {
   constructor(props) {
     super(props);
@@ -10,9 +10,9 @@ export class Tile extends Component {
   }
   render() {
     return (
-      <li id={this.id} value={this.state.value}>
+      <ListGroupItem id={this.id} value={this.state.value}>
         {this.state.value}
-      </li>
+      </ListGroupItem>
     );
   }
 }

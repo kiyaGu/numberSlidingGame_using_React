@@ -1,12 +1,12 @@
 import React from "react";
 import "../setupTests";
-import TilesContainer from "./TilesContainer";
+import { TilesContainer } from "./TilesContainer";
 import { Tile } from "../components/Tile";
 
 describe("<TilesContainer /> ", () => {
   it("renders an <ul> list", () => {
     const wrapper = shallow(<TilesContainer />);
-    expect(wrapper.find("ul").exists()).toBe(true);
+    expect(wrapper.find("ListGroup").exists()).toBe(true);
   });
   it("should have a width state", () => {
     const wrapper = shallow(<TilesContainer />);

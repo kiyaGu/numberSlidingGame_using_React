@@ -3,10 +3,10 @@ import "../setupTests";
 import {
   PuzzleContainer,
   GameTimer,
-  ResetGameButton,
   ResultMessageBox
 } from "./PuzzleContainer";
-import TilesContainer from "./TilesContainer";
+import { TilesContainer } from "./TilesContainer";
+import { ResetGameButton } from "../components/ResetGameButton";
 
 describe("PuzzleContainer", () => {
   it("should render Tiles, GameTimer, ResetGameButton and FinalResultMessageBox child components", () => {
