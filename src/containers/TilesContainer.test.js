@@ -53,4 +53,14 @@ describe("<TilesContainer /> ", () => {
     //to testing the blank tile
     expect(tiles.at(8).props().value).toBe("");
   });
+  it("passes a move method as onClick prop", () => {
+    const wrapper = shallow(<TilesContainer />);
+    wrapper.setState({ width: 3, height: 3 });
+    wrapper.instance().populateTileEntries();
+    const tiles = wrapper.update().find(Tile);
+    tiles.forEach(tile => {
+      expect(tile.prop("onClick")).toBe(wrapper.instance().move);
+      expect(tile.prop("onClick")).toBeDefined();
+    });
+  });
 });

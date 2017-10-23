@@ -15,6 +15,9 @@ export class TilesContainer extends Component {
   componentWillMount() {
     this.populateTileEntries();
   }
+  move = () => {
+    return null;
+  };
   populateTileEntries() {
     let tiles = [],
       puzzleSize = this.state.width * this.state.height;
@@ -37,7 +40,7 @@ export class TilesContainer extends Component {
         className="d-flex flex-row flex-wrap align-content-center"
       >
         {this.state.tiles.map((tile, index) => (
-          <Tile id={index} key={index} value={tile} />
+          <Tile id={index} key={index} value={tile} onClick={this.move} />
         ))}
       </ListGroup>
     ) : null;
