@@ -9,7 +9,7 @@ describe("<ResetButton />", () => {
   });
   it("renders a button with class btn", () => {
     const wrapper = shallow(<ResetGameButton />);
-    expect(wrapper.find("Button").hasClass("btn-md")).toBe(true);
+    expect(wrapper.find("Button").hasClass("btn-block")).toBe(true);
   });
   it("renders a button with an id of reset", () => {
     const wrapper = shallow(<ResetGameButton />);

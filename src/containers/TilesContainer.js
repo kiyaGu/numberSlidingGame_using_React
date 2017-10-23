@@ -6,8 +6,8 @@ export class TilesContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: 3,
-      height: 3,
+      width: 0,
+      height: 0,
       tiles: []
     };
     this.populateTileEntries = this.populateTileEntries.bind(this);

@@ -3,7 +3,7 @@ import "../setupTests";
 import { Tile } from "./Tile";
 
 describe("<Tile />", () => {
-  it("renders an <li>", () => {
+  it("renders an <ListGroupItem>", () => {
     const wrapper = shallow(<Tile />);
     expect(wrapper.find("ListGroupItem")).toHaveLength(1);
   });

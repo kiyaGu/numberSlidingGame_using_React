@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { TilesContainer } from "./TilesContainer";
 import { ResetGameButton } from "../components/ResetGameButton";
+import { ResultMessageBox } from "../components/ResultMessageBox";
+import { GameTimer } from "../components/GameTimer";
 import { Card, CardBody, Row, Col } from "reactstrap";
+
 class PuzzleContainer extends Component {
   render() {
     return (
@@ -36,12 +39,4 @@ class PuzzleContainer extends Component {
     );
   }
 }
-
-const GameTimer = () => {
-  return null;
-};
-
-const ResultMessageBox = () => {
-  return null;
-};
-export { PuzzleContainer, GameTimer, ResultMessageBox };
+export { PuzzleContainer };
