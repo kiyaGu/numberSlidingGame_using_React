@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { Tile } from "../components/Tile";
 
 class TilesContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      size: 0
+    };
+  }
   render() {
     return (
       <ul>
