@@ -10,4 +10,8 @@ describe("<ResetButton />", () => {
     const wrapper = shallow(<ResetButton />);
     expect(wrapper.find("button").hasClass("btn")).toBe(true);
   });
+  it("renders a button with an id of reset", () => {
+    const wrapper = shallow(<ResetButton />);
+    expect(wrapper.find("button#reset")).toHaveLength(1);
+  });
 });
