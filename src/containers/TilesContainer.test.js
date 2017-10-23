@@ -18,15 +18,19 @@ describe("<TilesContainer /> ", () => {
   });
   it("should have a tiles state", () => {
     const wrapper = shallow(<TilesContainer />);
+    wrapper.instance().populateTileEntries();
     expect(wrapper.state("tiles")).toEqual([]);
   });
-  it("should update the size state based on the tiles array length", () => {
+  it("should, given the w and h, the tiles state array with numbers from 1 to (w x h - 1) and '' ", () => {
     const wrapper = shallow(<TilesContainer />);
-    wrapper.setState({ tiles: [1, 2, 3, 4, 5, 6, 7, 8, ""] });
-    expect(wrapper.state("tiles").length).toBe(9);
+    wrapper.setState({ width: 4, height: 4 });
+    wrapper.instance().populateTileEntries();
+    expect(wrapper.state("tiles").length).toBe(16);
   });
   it(" for a puzzle of 3 x 3 it should have 9 tiles", () => {
     const wrapper = shallow(<TilesContainer />);
-    expect(wrapper.find(Tile)).toHaveLength(9);
+    wrapper.setState({ width: 3, height: 3 });
+    wrapper.instance().populateTileEntries();
+    expect(wrapper.update().find(Tile)).toHaveLength(9);
   });
 });

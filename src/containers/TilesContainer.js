@@ -9,21 +9,31 @@ class TilesContainer extends Component {
       height: 0,
       tiles: []
     };
+    this.populateTileEntries = this.populateTileEntries.bind(this);
+  }
+  populateTileEntries() {
+    let tiles = [],
+      puzzleSize = this.state.width * this.state.height;
+    if (puzzleSize > 1) {
+      for (let i = 1; i < puzzleSize; i++) {
+        tiles.push(i);
+      }
+      if (tiles.length > 1) {
+        tiles.push("");
+      }
+    }
+    this.setState({
+      tiles
+    });
   }
   render() {
-    return (
+    return this.state.tiles ? (
       <ul>
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
-        <Tile />
+        {this.state.tiles.map((tile, index) => (
+          <Tile id={index} key={index} value={tile} />
+        ))}
       </ul>
-    );
+    ) : null;
   }
 }
 export default TilesContainer;
