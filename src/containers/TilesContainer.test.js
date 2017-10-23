@@ -51,6 +51,6 @@ describe("<TilesContainer /> ", () => {
       expect(tile.props().value).toBe(i + 1);
     });
     //to testing the blank tile
-    expect(tiles.slice(8).props().value).toBe("");
+    expect(tiles.at(8).props().value).toBe("");
   });
 });
