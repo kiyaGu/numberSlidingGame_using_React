@@ -10,7 +10,12 @@ export class Tile extends Component {
   }
   render() {
     return (
-      <ListGroupItem id={this.id} value={this.state.value} className="w-25">
+      <ListGroupItem
+        id={this.id}
+        value={this.state.value}
+        className="w-25"
+        onClick={() => this.props.onClick(this.id)}
+      >
         {this.state.value}
       </ListGroupItem>
     );

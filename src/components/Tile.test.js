@@ -25,4 +25,11 @@ describe("<Tile />", () => {
     wrapper.setState({ value: 4 });
     expect(parseInt(wrapper.text("li"))).toBe(4);
   });
+  it("should call onClick with id as argument when clicked", () => {
+    const mockOnClick = jest.fn();
+    const id = 2;
+    const wrapper = shallow(<Tile id={id} onClick={mockOnClick} />);
+    wrapper.find("ListGroupItem").simulate("click");
+    expect(mockOnClick).toBeCalledWith(id);
+  });
 });
