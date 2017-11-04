@@ -15,15 +15,10 @@ describe("<Tile />", () => {
     const wrapper = shallow(<Tile value={1} />);
     expect(wrapper.props().value).toBe(1);
   });
-  it("should overwrite the value of the value prop", () => {
-    const wrapper = shallow(<Tile value={0} />);
-    wrapper.setState({ value: 8 });
-    expect(wrapper.update().state().value).toBe(8);
-  });
+
   it("should display the current value it has", () => {
-    const wrapper = mount(<Tile value={0} />);
-    wrapper.setState({ value: 4 });
-    expect(parseInt(wrapper.text("li"))).toBe(4);
+    const wrapper = mount(<Tile value={2} />);
+    expect(parseInt(wrapper.text("li"))).toBe(2);
   });
   it("should call onClick with id as argument when clicked", () => {
     const mockOnClick = jest.fn();
