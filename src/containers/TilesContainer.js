@@ -15,24 +15,14 @@ export class TilesContainer extends Component {
   }
 
   move = position => {
-    this.slidingPuzzle.move(8);
+    this.slidingPuzzle.move(position);
     // this.setState({
     //   tiles: this.slidingPuzzle.tiles
     // });
     this.forceUpdate();
   };
   populateTileEntries() {
-    let tiles = [],
-      puzzleSize = this.slidingPuzzle.width * this.slidingPuzzle.height;
-    if (puzzleSize > 1) {
-      for (let i = 1; i < puzzleSize; i++) {
-        tiles.push(i);
-      }
-      if (tiles.length > 1) {
-        tiles.push("");
-      }
-    }
-    this.slidingPuzzle.tiles = tiles;
+    this.slidingPuzzle.mixTiles();
   }
   render() {
     return this.slidingPuzzle.tiles ? (

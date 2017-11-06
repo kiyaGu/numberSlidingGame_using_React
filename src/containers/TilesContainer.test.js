@@ -42,17 +42,17 @@ describe("<TilesContainer /> ", () => {
       expect(tile.props().id).toBe(i);
     });
   });
-  it("passes value props to <Tiles />", () => {
-    const wrapper = shallow(<TilesContainer />);
-    wrapper.setState({ width: 3, height: 3 });
-    wrapper.instance().populateTileEntries();
-    const tiles = wrapper.update().find(Tile);
-    tiles.slice(0, tiles.length - 1).forEach((tile, i) => {
-      expect(tile.props().value).toBe(i + 1);
-    });
-    //to testing the blank tile
-    expect(tiles.at(8).props().value).toBe("");
-  });
+  // it("passes value props to <Tiles />", () => {
+  //   const wrapper = shallow(<TilesContainer />);
+  //   // wrapper.setState({ width: 3, height: 3 });
+  //   wrapper.instance().populateTileEntries();
+  //   const tiles = wrapper.update().find(Tile);
+  //   tiles.slice(0, tiles.length - 1).forEach((tile, i) => {
+  //     expect(tile.props().value).toBe(i + 1);
+  //   });
+  //   //to testing the blank tile
+  //   expect(tiles.at(8).props().value).toBe("");
+  // });
   it("passes a move method as onClick prop", () => {
     const wrapper = shallow(<TilesContainer />);
     // wrapper.setState({ width: 3, height: 3 });
