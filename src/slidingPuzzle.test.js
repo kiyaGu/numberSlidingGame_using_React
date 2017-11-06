@@ -31,6 +31,18 @@ describe("slidingPuzzle", () => {
     slidingPuzzle.move(7);
     expect(slidingPuzzle.tiles).toEqual([1, 2, 3, 4, 5, 6, 7, "", 8]);
   });
+  it("should not make invalid moves", () => {
+    const slidingPuzzle = new SlidingPuzzle(3, 3);
+    slidingPuzzle.tiles = [1, 2, 3, 4, 5, 6, 7, 8, ""];
+    slidingPuzzle.move(3);
+    expect(slidingPuzzle.tiles).toEqual([1, 2, 3, 4, 5, 6, 7, 8, ""]);
+  });
+  it("should not make a move from the edges to the start of the next row", () => {
+    const slidingPuzzle = new SlidingPuzzle(3, 3);
+    slidingPuzzle.tiles = [1, 2, 3, "", 5, 6, 7, 8, 4];
+    slidingPuzzle.move(2);
+    expect(slidingPuzzle.tiles).toEqual([1, 2, 3, "", 5, 6, 7, 8, 4]);
+  });
   it("should have mixTiles method", () => {
     const slidingPuzzle = new SlidingPuzzle(3, 3);
     const spyMixTiles = jest.spyOn(slidingPuzzle, "mixTiles");

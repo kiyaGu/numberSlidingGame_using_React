@@ -5,14 +5,38 @@ export class SlidingPuzzle {
     this.tiles = [];
   }
   move(position) {
-    if (this.tiles[position + 1] === "") {
-      let temp = this.tiles[position];
-      this.tiles[position] = this.tiles[position + 1];
-      this.tiles[position + 1] = temp;
-    } else if (this.tiles[position - 1] === "") {
-      let temp = this.tiles[position];
-      this.tiles[position] = this.tiles[position - 1];
-      this.tiles[position - 1] = temp;
+    /* 
+                  a position can move to +1 right,-1 left,-width top, +width bottom
+                  if that position is valid and available
+        */
+    let status;
+    if (position % this.width !== 0 && this.tiles[position - 1] === "") {
+      this.tiles[position - 1] = this.tiles[position];
+      this.tiles[position] = "";
+      status = "success";
+    } else if (
+      (position + 1) % this.width !== 0 &&
+      this.tiles[position + 1] === ""
+    ) {
+      this.tiles[position + 1] = this.tiles[position];
+      this.tiles[position] = "";
+      status = "success";
+    } else if (
+      position - this.width >= 0 &&
+      this.tiles[position - this.width] === ""
+    ) {
+      this.tiles[position - this.width] = this.tiles[position];
+      this.tiles[position] = "";
+      status = "success";
+    } else if (
+      position + this.width <= this.width * this.height - 1 &&
+      this.tiles[position + this.width] == ""
+    ) {
+      this.tiles[position + this.width] = this.tiles[position];
+      this.tiles[position] = "";
+      status = "success";
+    } else {
+      status = "fail";
     }
   }
   mixTiles() {
