@@ -11,26 +11,26 @@ class PuzzleContainer extends Component {
       <Card id="puzzleContainer">
         <CardBody>
           <Row>
-            <Col sm="9">
+            <Col sm={{ size: 9 }}>
               <TilesContainer />
             </Col>
-            <Col sm="3">
+            <Col sm={{ size: 3 }}>
               <GameTimer />
             </Col>
           </Row>
         </CardBody>
         <CardBody>
           <Row>
-            <Col sm="2" />
-            <Col sm="4">
+            <Col sm={{ size: 2 }} />
+            <Col sm={{ size: 4 }}>
               <ResetGameButton />
             </Col>
           </Row>
         </CardBody>
         <CardBody>
           <Row>
-            <Col sm="2" />
-            <Col sm="8">
+            <Col sm={{ size: 2 }} />
+            <Col sm={{ size: 8 }}>
               <ResultMessageBox />
             </Col>
           </Row>

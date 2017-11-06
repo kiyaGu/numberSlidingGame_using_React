@@ -31,4 +31,19 @@ describe("slidingPuzzle", () => {
     slidingPuzzle.move(7);
     expect(slidingPuzzle.tiles).toEqual([1, 2, 3, 4, 5, 6, 7, "", 8]);
   });
+  it("should have mixTiles method", () => {
+    const slidingPuzzle = new SlidingPuzzle(3, 3);
+    const spyMixTiles = jest.spyOn(slidingPuzzle, "mixTiles");
+    slidingPuzzle.mixTiles();
+    expect(spyMixTiles).toHaveBeenCalled();
+  });
+  describe("the mixTiles method", () => {
+    it("should return an array with the size of width X height", () => {
+      const slidingPuzzle = new SlidingPuzzle(3, 3);
+      slidingPuzzle.mixTiles();
+      expect(slidingPuzzle.tiles.length).toBe(
+        slidingPuzzle.width * slidingPuzzle.height
+      );
+    });
+  });
 });

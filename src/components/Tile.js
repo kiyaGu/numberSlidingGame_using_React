@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { ListGroupItem } from "reactstrap";
 
 export const Tile = ({ id, value, onClick }) => (
