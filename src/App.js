@@ -7,11 +7,11 @@ class App extends Component {
   render() {
     return (
       <Row id="container">
-        <Col sm={{ size: 3 }} />
-        <Col sm={{ size: 6 }}>
+        <Col sm={{ size: 2 }} />
+        <Col sm={{ size: 7 }}>
           <PuzzleContainer />
         </Col>
-        <Col sm={{ size: 3 }} />
+        <Col sm={{ size: 2 }} />
       </Row>
     );
   }

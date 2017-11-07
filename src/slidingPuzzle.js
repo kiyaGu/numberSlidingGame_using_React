@@ -6,6 +6,11 @@ class SlidingPuzzle {
     this.SUCCESS = "success";
     this.FAIL = "fail";
     this.WIN = "win";
+    this.move = this.move.bind(this);
+    this.mixTiles = this.mixTiles.bind(this);
+    this.gameComplete = this.gameComplete.bind(this);
+    this.isSolvable = this.isSolvable.bind(this);
+    this.reset = this.reset.bind(this);
   }
   move(position) {
     /* 

@@ -14,11 +14,14 @@ body {
 #lists li {
     background: #000;
     color: cornsilk;
-    text-align: center;
 }
 
 #puzzleContainer {
     opacity: 0.85;
+}
+
+.react-countdown-clock {
+    margin-top: 40%;
 }
 
 #lists li {
@@ -26,6 +29,7 @@ body {
     padding: 3% 3%;
     box-sizing: content-box;
     border: 1px solid #fff;
+    cursor: pointer;
 }
 
 ul#lists {

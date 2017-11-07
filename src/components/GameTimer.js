@@ -1,11 +1,33 @@
 import React, { Component } from "react";
+import ReactCountdownClock from "react-countdown-clock";
 
 export class GameTimer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.timeDone = this.timeDone.bind(this);
+  }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      displayTimer: nextProps.displayTimer
+    });
+  }
+  timeDone() {
+    this.props.setResultMessge("Oops, you LOST!!!");
+    this.props.removeTimer();
+  }
   render() {
-    return (
-      <div id="game-timer">
-        <p>3:00</p>
-      </div>
-    );
+    if (this.props.displayTimer) {
+      return (
+        <ReactCountdownClock
+          seconds={10}
+          color="#fec85d"
+          alpha={0.7}
+          size={150}
+          onComplete={this.timeDone}
+        />
+      );
+    }
+    return null;
   }
 }

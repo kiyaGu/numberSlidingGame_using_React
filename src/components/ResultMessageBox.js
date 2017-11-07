@@ -1,5 +1,5 @@
 import React from "react";
 
-export const ResultMessageBox = () => {
-  return <div id="resultContainer">You won...or...</div>;
+export const ResultMessageBox = props => {
+  return <div id="resultContainer">{props.message}</div>;
 };
