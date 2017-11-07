@@ -6,16 +6,20 @@ import { SlidingPuzzle } from "../slidingPuzzle";
 
 describe("<TilesContainer /> ", () => {
   it("renders an <ul> list", () => {
-    const wrapper = shallow(<TilesContainer />);
-    console.log(wrapper);
-    wrapper.instance().slidingPuzzle = new SlidingPuzzle(3, 3);
+    const wrapper = shallow(
+      <TilesContainer slidingPuzzle={new SlidingPuzzle(3, 3)} />
+    );
+    wrapper.instance().setState({ slidingPuzzle: new SlidingPuzzle(3, 3) });
 
     expect(wrapper.find("ListGroup").exists()).toBe(true);
   });
 
   it("passes id props to <Tiles />", () => {
-    const wrapper = shallow(<TilesContainer />);
-    // wrapper.setState({ width: 3, height: 3 });
+    const wrapper = shallow(
+      <TilesContainer slidingPuzzle={new SlidingPuzzle(3, 3)} />
+    );
+    wrapper.instance().setState({ slidingPuzzle: new SlidingPuzzle(3, 3) });
+
     wrapper.instance().populateTileEntries();
     const tiles = wrapper.update().find(Tile);
     tiles.forEach((tile, i) => {
@@ -24,7 +28,9 @@ describe("<TilesContainer /> ", () => {
   });
 
   it("passes a move method as onClick prop", () => {
-    const wrapper = shallow(<TilesContainer />);
+    const wrapper = shallow(
+      <TilesContainer slidingPuzzle={new SlidingPuzzle(3, 3)} />
+    );
     // wrapper.setState({ width: 3, height: 3 });
     wrapper.instance().populateTileEntries();
     const tiles = wrapper.update().find(Tile);

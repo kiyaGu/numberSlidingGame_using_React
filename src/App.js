@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Row id="container">
         <Col sm={{ size: 2 }} />
-        <Col sm={{ size: 7 }}>
+        <Col sm={{ size: 8 }}>
           <PuzzleContainer />
         </Col>
         <Col sm={{ size: 2 }} />

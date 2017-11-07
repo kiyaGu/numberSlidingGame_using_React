@@ -7,7 +7,7 @@ body {
 }
 
 #container {
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 #puzzleContainer,
@@ -24,14 +24,33 @@ body {
     margin-top: 40%;
 }
 
+.harder-game {
+    width: 18%;
+}
+
+ul#lists {
+    flex-direction: column;
+}
+
 #lists li {
     font-size: 3em;
     padding: 3% 3%;
     box-sizing: content-box;
     border: 1px solid #fff;
     cursor: pointer;
+    text-align: center;
 }
 
-ul#lists {
-    flex-direction: column;
+.list-group-item:first-child {
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0 !important;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+#resultMessage {
+    font-size: 1.5em;
 }

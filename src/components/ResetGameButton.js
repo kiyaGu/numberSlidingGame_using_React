@@ -13,7 +13,7 @@ export class ResetGameButton extends Component {
       <Button
         className="btn-block"
         outline
-        color="secondary"
+        color="danger"
         id="reset"
         onClick={this.handleClick}
       >

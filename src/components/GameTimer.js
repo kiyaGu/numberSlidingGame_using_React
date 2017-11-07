@@ -4,7 +4,6 @@ import ReactCountdownClock from "react-countdown-clock";
 export class GameTimer extends Component {
   constructor(props) {
     super(props);
-
     this.timeDone = this.timeDone.bind(this);
   }
   componentWillReceiveProps(nextProps) {
@@ -19,13 +18,15 @@ export class GameTimer extends Component {
   render() {
     if (this.props.displayTimer) {
       return (
-        <ReactCountdownClock
-          seconds={10}
-          color="#fec85d"
-          alpha={0.7}
-          size={150}
-          onComplete={this.timeDone}
-        />
+        <div>
+          <ReactCountdownClock
+            seconds={180}
+            color="#fec85d"
+            alpha={0.7}
+            size={150}
+            onComplete={this.timeDone}
+          />
+        </div>
       );
     }
     return null;
